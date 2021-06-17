@@ -45,6 +45,7 @@ function Input({ name, placeholder, ...rest }: InputProps) {
   return (
     <Container isFilled={isFilled} isFocused={isFocused}>
       <input
+        id={fieldName}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         defaultValue={defaultValue}
