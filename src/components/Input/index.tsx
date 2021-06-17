@@ -9,12 +9,14 @@ import { useField } from '@unform/core';
 
 import { Container } from './styles';
 
-interface InputProps {
+interface InputCustomProps {
   name: string
   placeholder: string
 }
 
-const Input = ({ name, placeholder }: InputProps) => {
+type InputProps = InputCustomProps & JSX.IntrinsicElements['input']
+
+function Input({ name, placeholder, ...rest }: InputProps) {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const [isFocused, setIsFocused] = useState(false);
@@ -43,11 +45,11 @@ const Input = ({ name, placeholder }: InputProps) => {
   return (
     <Container isFilled={isFilled} isFocused={isFocused}>
       <input
-        placeholder={placeholder}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         defaultValue={defaultValue}
         ref={inputRef}
+        {...rest}
       />
     </Container>
   );
