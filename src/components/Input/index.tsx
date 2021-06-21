@@ -11,12 +11,11 @@ import { Container } from './styles';
 
 interface InputCustomProps {
   name: string
-  placeholder: string
 }
 
 type InputProps = InputCustomProps & JSX.IntrinsicElements['input']
 
-function Input({ name, placeholder, ...rest }: InputProps) {
+function Input({ name,  ...rest }: InputProps) {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const [isFocused, setIsFocused] = useState(false);
