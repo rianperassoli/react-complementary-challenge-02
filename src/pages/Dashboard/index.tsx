@@ -75,7 +75,7 @@ function Dashboard() {
   }
 
   const handleEditFood = (food: FoodInterface) => {
-    setModalIsOpen(true)
+    setEditModalOpen(true)
     setEditingFood(food)
   }
 
